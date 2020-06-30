@@ -1590,7 +1590,7 @@ GameObject:
   - component: {fileID: 1528283688}
   m_Layer: 0
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: 1 life
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2022,7 +2022,7 @@ GameObject:
   - component: {fileID: 2019082351}
   m_Layer: 0
   m_Name: 3
-  m_TagString: Untagged
+  m_TagString: 3lifes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2356,7 +2356,7 @@ GameObject:
   - component: {fileID: 2085201246}
   m_Layer: 0
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: 2lifes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

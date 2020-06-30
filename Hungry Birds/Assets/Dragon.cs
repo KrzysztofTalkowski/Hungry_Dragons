@@ -10,6 +10,8 @@ public class Dragon : MonoBehaviour
     private float _timeSittingAround;
 
 
+
+
     [SerializeField]private float _launchPower = 500;
     
 
@@ -26,7 +28,7 @@ public class Dragon : MonoBehaviour
         if (_dragonWasLaunched &&
             GetComponent<Rigidbody2D>().velocity.magnitude <= 0.1)
         {
-            _timeSittingAround += Time.deltaTime;
+            _timeSittingAround += Time.deltaTime;   
         }
 
 
@@ -43,27 +45,37 @@ public class Dragon : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GetComponent<SpriteRenderer>().color = Color.yellow;
-        GetComponent<LineRenderer>().enabled = true;
+        if (_dragonWasLaunched == false)
+        {
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            GetComponent<LineRenderer>().enabled = true;
+        }
     }
 
     private void OnMouseUp()
     {
-        GetComponent<SpriteRenderer>().color = Color.white;
+        if (_dragonWasLaunched == false)
+        {
+            GetComponent<SpriteRenderer>().color = Color.white;
 
-        Vector2 directionToInitialPosition = _initialPosition - transform.position;
+            Vector2 directionToInitialPosition = _initialPosition - transform.position;
 
-        GetComponent<Rigidbody2D>().AddForce(directionToInitialPosition * _launchPower);
-        GetComponent<Rigidbody2D>().gravityScale = 1;
-        _dragonWasLaunched = true;
+            GetComponent<Rigidbody2D>().AddForce(directionToInitialPosition * _launchPower);
+            GetComponent<Rigidbody2D>().gravityScale = 1;
+            _dragonWasLaunched = true;
 
-        GetComponent<LineRenderer>().enabled = false;
+            GetComponent<LineRenderer>().enabled = false;
+        }
+        
     }
 
     private void OnMouseDrag()
     {
-        Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(newPosition.x, newPosition.y);
+        if (_dragonWasLaunched == false)
+        {
+            Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector3(newPosition.x, newPosition.y);
+        }
     }
 
 }
