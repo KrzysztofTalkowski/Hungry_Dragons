@@ -8,6 +8,7 @@ public class LevelController : MonoBehaviour
     private Enemy[] _enemies;
     private static int _nextLevelIndex = 1;
 
+
     private void OnEnable()
     {
         _enemies = FindObjectsOfType<Enemy>();
@@ -15,7 +16,10 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
-        foreach(Enemy enemy in _enemies)
+        
+
+
+        foreach (Enemy enemy in _enemies)
         {
             if (enemy != null)
                 return;
@@ -25,6 +29,7 @@ public class LevelController : MonoBehaviour
 
         _nextLevelIndex++;
         string nextLevelName = "Level" + _nextLevelIndex;
+
         SceneManager.LoadScene(nextLevelName);
 
     }

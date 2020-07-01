@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class Dragon : MonoBehaviour
     private Vector3 _initialPosition;
     private bool _dragonWasLaunched;
     private float _timeSittingAround;
+
 
 
 
@@ -47,7 +49,7 @@ public class Dragon : MonoBehaviour
     {
         if (_dragonWasLaunched == false)
         {
-            GetComponent<SpriteRenderer>().color = Color.yellow;
+            GetComponent<SpriteRenderer>().color = Color.red;
             GetComponent<LineRenderer>().enabled = true;
         }
     }
