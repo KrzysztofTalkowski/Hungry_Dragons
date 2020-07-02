@@ -1376,7 +1376,7 @@ MonoBehaviour:
   - target: {fileID: 1524067364}
     weight: 1
     radius: 2
-  - target: {fileID: 0}
+  - target: {fileID: 1907428231}
     weight: 1
     radius: 2
 --- !u!4 &1326408261
